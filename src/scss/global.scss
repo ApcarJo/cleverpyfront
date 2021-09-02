@@ -1,0 +1,22 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.content {
+    @extend .center;
+    justify-content: flex-start;
+    height: 100vh;
+    padding: 2%;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.hide {
+    display: none;
+}

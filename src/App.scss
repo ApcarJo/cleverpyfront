@@ -1,3 +1,8 @@
+
+@import './scss/global.scss';
+@import 'containers/Home/Home.scss';
+@import 'components/Posts/Post.scss';
+
 .App {
   text-align: center;
 }
