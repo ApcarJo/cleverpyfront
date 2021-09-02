@@ -32,5 +32,20 @@ Delete buttons will erase the post from the view. You will need to refresh websi
 
 <img src="src/img/Screenshot_2.png">
 
+Projects related to this test:
+Dental Clinic
+https://github.com/ApcarJo/Frontend-Dental-Clinic
+
+React Movie Suite
+https://github.com/ApcarJo/FrontEnd_ReactMovieSuite
+
+Deployed at Heroku respectively:
+Dental Clinic
+https://geekshubsdentalclinicfront.herokuapp.com/
+(login javi2@gmail.com password: 1234)
+
+React Movie Suite
+https://moviesuitefront.herokuapp.com/
+
 
 
