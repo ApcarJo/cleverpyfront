@@ -22,10 +22,12 @@ interface comment {
 export default function Post({ userId, id, title, body, onDeletePost, postIndex }: appProps) {
 
     //HOOK
+    //Boolean to control the hide and show of the comments
     const [viewData, setViewData] = useState<boolean>(false);
     const [commentData, setCommentData] = useState<comment[] | []>([]);
 
     const handlePostClick = async (postId: number) => {
+        //Checking first that commentData value is empty.
         if (commentData.length === 0) {
             let res = await axios.get(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`);
             setCommentData(res.data);
@@ -48,6 +50,7 @@ export default function Post({ userId, id, title, body, onDeletePost, postIndex 
                     <div className="bodyContent">{body}</div>
                     <button className="extendButton" onClick={() => handlePostClick(id)}>{viewData ? "Hide" : "Extend"} </button>
                 </div>
+                {/* Comments will be only called to the json api when you push the extend button and then they will be rendered */}
                 {viewData && (<div className="comments">
                     {commentData.length === 0 && (<div><span>Is loading</span></div>)}
                     {commentData.length && commentData.map((value, index) => (

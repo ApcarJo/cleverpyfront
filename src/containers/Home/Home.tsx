@@ -5,8 +5,7 @@ import Post from "../../components/Posts/Post";
 
 const Home = () => {
 
-    //Interfacee
-
+    //Interface
     interface post {
         userId: number;
         id: number;
@@ -21,18 +20,21 @@ const Home = () => {
         getAllPost();
     }, []);
 
+
+    //Receiving all the posts and saving in a variable
     const getAllPost = async () => {
         let res = await axios.get(`https://jsonplaceholder.typicode.com/posts`);
         setPostData(res.data);
-        console.log(postData.length)
     }
 
+    //Removing the selected post from the array
     const handleDeletePost = (index: number) => {
         const tempData = [...postData];
         tempData.splice(index, 1)
         setPostData(tempData);
     }
 
+    //Calling to the Post component to draw the posts with a .map method.
     if (postData.length > 1) {
         return (
             <div className="viewHome">
