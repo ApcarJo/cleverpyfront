@@ -19,6 +19,11 @@ Tools & Coding Languages
 Download the zip file and install dependencies: 'npm i'
 Run: 'npm start'
 
+OR
+
+Visit the next link to the deployed webapp: https://main.ddvgz49jyifhj.amplifyapp.com/
+
+
 Home page will show every post on http://jsonplaceholder.typicode.com/
 
 Extend button allows you to check every comment of the selected post, this comments will be shown under the current post.

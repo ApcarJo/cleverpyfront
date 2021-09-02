@@ -22,7 +22,7 @@ const Home = () => {
     }, []);
 
     const getAllPost = async () => {
-        let res = await axios.get(`https://jsonplaceholder.typicode.com/posts`)
+        let res = await axios.get(`https://jsonplaceholder.typicode.com/posts`);
         setPostData(res.data);
     }
 
