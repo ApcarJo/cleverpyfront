@@ -24,6 +24,7 @@ const Home = () => {
     const getAllPost = async () => {
         let res = await axios.get(`https://jsonplaceholder.typicode.com/posts`);
         setPostData(res.data);
+        console.log(postData.length)
     }
 
     const handleDeletePost = (index: number) => {
@@ -32,7 +33,7 @@ const Home = () => {
         setPostData(tempData);
     }
 
-    if (postData.length) {
+    if (postData.length > 1) {
         return (
             <div className="viewHome">
                 <h1>Cleverpy Forum</h1>
