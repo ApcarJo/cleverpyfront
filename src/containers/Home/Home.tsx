@@ -35,6 +35,7 @@ const Home = () => {
     if (postData.length) {
         return (
             <div className="viewHome">
+                <h1>Cleverpy Forum</h1>
                 <div className="content">
                     {postData?.map((val, index) => (
                         <Post userId={val.userId} id={val.id} title={val.title} body={val.body} onDeletePost={handleDeletePost} postIndex={index}></Post>
