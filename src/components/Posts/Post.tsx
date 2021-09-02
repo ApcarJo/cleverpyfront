@@ -33,32 +33,36 @@ export default function Post({ userId, id, title, body, onDeletePost, postIndex 
         setViewData(!viewData)
     }
 
-    return (
-        <div>
-            <div className="card">
-                <div className="row cardHeader">
-                    <div className="userHeader">#{userId}</div>
-                    <div className="titleHeader">{title}</div>
-                    <div className="row maxWidth">
-                        <div className="idHeader">{id}</div>
-                        <div className="deleteButton" onClick={() => onDeletePost(postIndex)}>Delete</div>
-                    </div>
-                </div>
-                <div className="bodyContent">{body}</div>
-                <button className="extendButton" onClick={() => handlePostClick(id)}>{viewData ? "Hide" : "Extend"} </button>
-            </div>
-            {viewData && (<div className="comments">
-                {commentData.length === 0 && (<div><span>Is loading</span></div>)}
-                {commentData.length && commentData.map((value, index) => (
-                    <div className="commentCard" key={value.id}>
-                        <div className="row cardHeader">
-                            <div className="userHeader">#{value.id}</div>
-                            <div className="titleHeader">{value.name}</div>
+    if (userId) {
+        return (
+            <div>
+                <div className="card">
+                    <div className="row cardHeader">
+                        <div className="userHeader">#{userId}</div>
+                        <div className="titleHeader">{title}</div>
+                        <div className="row maxWidth">
+                            <div className="idHeader">{id}</div>
+                            <div className="deleteButton" onClick={() => onDeletePost(postIndex)}>Delete</div>
                         </div>
-                        <div className="bodyContent">{value.body}</div>
                     </div>
-                ))}
-            </div>)}
-        </div>
-    )
+                    <div className="bodyContent">{body}</div>
+                    <button className="extendButton" onClick={() => handlePostClick(id)}>{viewData ? "Hide" : "Extend"} </button>
+                </div>
+                {viewData && (<div className="comments">
+                    {commentData.length === 0 && (<div><span>Is loading</span></div>)}
+                    {commentData.length && commentData.map((value, index) => (
+                        <div className="commentCard" key={value.id}>
+                            <div className="row cardHeader">
+                                <div className="userHeader">#{value.id}</div>
+                                <div className="titleHeader">{value.name}</div>
+                            </div>
+                            <div className="bodyContent">{value.body}</div>
+                        </div>
+                    ))}
+                </div>)}
+            </div>
+        )
+    } else {
+        return (<h4>Loading</h4>);
+    }
 }

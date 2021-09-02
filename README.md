@@ -32,7 +32,9 @@ Delete buttons will erase the post from the view. You will need to refresh websi
 
 <img src="src/img/Screenshot_2.png">
 
+
 Projects related to this test:
+
 Dental Clinic
 https://github.com/ApcarJo/Frontend-Dental-Clinic
 

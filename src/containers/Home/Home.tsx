@@ -46,7 +46,7 @@ const Home = () => {
         )
     } else {
         return (
-            <p>loading</p>)
+            <h4>Loading</h4>)
     }
 }
 
